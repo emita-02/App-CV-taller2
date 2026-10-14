@@ -84,6 +84,19 @@ export const CVProvider = ({ children }: { children: ReactNode }) => {
         habilidades: [...prev.habilidades, hab],
     }));
   }
+  const updateHabilidad = (id: string, hab: Habilidad) => {
+    setCVData((prev) => ({
+      ...prev,
+      habilidades: prev.habilidades.map((h) => (h.id === id ? hab : h)),
+    }));
+  };
+
+  const deleteHabilidad = (id: string) => {
+    setCVData((prev) => ({
+      ...prev,
+      habilidades: prev.habilidades.filter((h) => h.id !== id),
+    }));
+  };
 
   return (
     <CVContext.Provider

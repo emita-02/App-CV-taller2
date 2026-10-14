@@ -24,6 +24,7 @@ export interface Education {
 }
 
 export interface Habilidad {
+    id: string;
     soft: string;
     tough: string;
 }
